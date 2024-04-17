@@ -1,0 +1,13 @@
+
+span#curTime {
+    font-family: 'Segoe UI', sans-serif;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    grid-area: cur_time;
+    padding: 0;
+    color: #909090;
+    font-weight: 460;
+    font-size: 14px;
+    margin: 0 0 0 1rem !important;
+}

@@ -1,0 +1,31 @@
+.frequenciesListContainer {
+    display: flex;
+    gap: 5px;
+}
+
+.frequencies{
+    width: 100%;
+}
+
+.frequencies ul {
+    display: flex;
+    /* flex-flow: row !important; */
+    align-items: center;
+    gap: 5px;
+
+    /* list-style: circle !important; */
+}
+
+.frequencies li {
+    padding: 0;
+    margin: 0 !important;
+}
+
+/* .frequencies li:not(:last-child):after{
+    content: '\02022';
+} */
+
+.frequencyItem {
+    display: flex;
+    gap: 0.3rem;
+}

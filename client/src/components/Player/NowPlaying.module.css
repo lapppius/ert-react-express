@@ -1,0 +1,63 @@
+#nowPlaying {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'now_word title_container';
+    height: 1.5rem;
+    font-size: 1rem;
+    font-weight: normal;
+    align-content: center;
+    align-items: center;
+}
+
+#nowPlaying > span:nth-child(1) {
+    display: grid;
+    grid-area: now_word;
+    margin: 0 0.3rem 0 0;
+}
+
+#nowPlayingTitleContainer {
+    display: grid;
+    grid-area: title_container;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+#nowPlayingTitle {
+    width: 100%;
+    /* transform: translateX(-20px); */
+}
+
+#nowPlayingTitle > span {
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: grid;
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.update {
+    animation: 0.7s update ease-in-out;
+}
+
+@keyframes update {
+    0% {
+        background-color: #427289;
+        color: rgba(0, 44, 44, 0.103);
+    }
+    100% {
+        background-color: rgb(0, 0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+}
+
+#nowPlayingDesc {
+    font-size: 0.9rem;
+    font-style: italic;
+    grid-area: now_playing_description;
+}

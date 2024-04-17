@@ -1,0 +1,151 @@
+.material-icons {
+  font-family: "Material Icons", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+/* --------------------------------Font Declaration end---------------------------------------- */
+
+:root {
+  --dark-cyan-back: rgb(0 139 139 / 0.376);
+  --light-cyan-border: rgb(0 219 219);
+  --player-header-back: rgb(33 33 33 /0.829);
+  --body-back: #18191a;
+  --radio-list-item: #242828;
+  --blue-link: #8bb5f8;
+  --background-noise: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=);
+  height: 100vh;
+}
+
+html {
+  max-height: 100%;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-back);
+}
+
+#root {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "admin-nav main"
+    "admin-nav main"
+    "player_box player_box";
+  color: rgb(241, 241, 241);
+}
+
+.header {
+  background: var(--player-header-back);
+  border-bottom: 0.1px solid var(--dark-cyan-back);
+  grid-area: header;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  position: fixed;
+  backdrop-filter: blur(3px);
+  display: flex;
+}
+
+.header > nav {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.header li {
+  display: flex;
+}
+
+.header li a:hover {
+  background-color: var(--dark-cyan-back);
+}
+.header li a {
+  display: flex;
+  align-items: center;
+  color: cyan;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.active {
+  outline: 1px solid var(--light-cyan-border);
+}
+
+nav {
+  margin: 0 1rem;
+}
+
+main {
+  grid-area: main;
+  scroll-behavior: smooth;
+  margin: 50px 0 70px 0;
+}
+
+abbr {
+  text-decoration: underline;
+}
+
+/* Media Rules */
+@media only screen and (min-device-width: 500px) and (min-width: 500px) {
+  /* scroll bar */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #313131;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/* @media only screen and (max-width: 499px) {
+    #root {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr auto  auto;
+        grid-template-areas:
+            'main'
+            'player_box'
+            'header';
+        color: rgb(241, 241, 241);
+        height: 100vh;
+    }
+} */

@@ -1,0 +1,67 @@
+.adminRadiosListItem {
+  border: 1px solid rgba(255, 255, 255, 0.178);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-gap: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+.adminRadiosListItem:not(:last-child) {
+  margin: 0 0 0.5rem 0;
+}
+.adminRadiosListItem a {
+  width: fit-content;
+  text-decoration: none;
+}
+.adminRadiosListItem:hover {
+  background-color: var(--radio-list-item);
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  grid-template-rows: auto;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+.imgContainer {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem 0 0;
+  border-radius: 20%;
+  overflow: hidden;
+}
+.mainContent img {
+  max-width: 100%;
+  height: auto;
+}
+
+.allFieldsList {
+  background-color: var(--radio-list-item);
+  border-collapse: collapse;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.allFieldsList tr:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+
+.allFieldsList > thead {
+  border-bottom: 2px solid white;
+}
+
+.allFieldsList td {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.allFieldsList th:not(:last-child) {
+  border-right: 1px solid white;
+}

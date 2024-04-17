@@ -1,0 +1,133 @@
+p {
+    margin: 0;
+}
+.radiosListItem {
+    font-size: 1.2rem;
+    display: grid;
+    grid-gap: 0.3rem;
+    padding: 0.2rem 0.85rem;
+    grid-template-columns: auto 1fr 0;
+    grid-template-rows: auto;
+    align-items: center;
+    align-content: center;
+    background-color: var(--radio-list-item);
+    cursor: pointer;
+    font-weight: 300;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.radiosListItem p {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+}
+
+.active {
+    opacity: 100% !important;
+}
+
+.radiosListItem a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out 0s;
+    height: 100%;
+}
+
+.radiosListItem a:hover {
+    color: cyan;
+}
+
+.imageButtonContainer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+
+.selected {
+    background-color: var(--dark-cyan-back) !important;
+}
+
+@media only screen and (min-width: 500px) {
+    .selected {
+        border: 0.08rem solid rgb(139, 139, 139);
+        padding: 0.12rem 0.77rem !important;
+    }
+    .radiosListItem {
+        border-radius: 0.5rem;
+        width: 13rem;
+        height: auto;
+    }
+    .imageButtonContainer span:nth-child(2) {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* transition: all .1s ease; */
+        /* transform: scale(.1); */
+        opacity: 0;
+    }
+
+    .radiosListItem:hover div span:nth-child(2) {
+        /* animation: btnAnim 0.2s ease-in-out; */
+        /* transform: scale(1.1);  */
+        /* filter: drop-shadow(0 0 0.8rem black); */
+        opacity: 1;
+        /* transition: opacity 0.15s ease-in-out; */
+    }
+
+    /* .radiosListItem:hover div span:nth-child(1) {
+        opacity: .5;
+        transition: all 0.15s ease-in-out;
+    } */
+    /* @keyframes btnAnim {
+        from {
+            transform: scale(0.2);
+        }
+        to {
+            transform: scale(1);
+        }
+    } */
+    .equalizerWrapper {
+        place-self: start end;
+        margin: 2px -10px 0 0;
+    }
+}
+/* Media Rules */
+
+@media (hover: hover) and (pointer: fine) {
+    .radiosListItem:hover {
+        background-color: var(--dark-cyan-back);
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .radiosListItem {
+        font-size: 1.3rem;
+        line-height: 3.3rem;
+        background-color: transparent;
+        padding: 0.5rem 0.85rem;
+    }
+
+    .radiosListItem:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .imageButtonContainer {
+        grid-auto-flow: column;
+        grid-gap: 0.5rem;
+    }
+
+    .imageButtonContainer span:nth-child(2) {
+        opacity: 1;
+    }
+
+    .equalizerWrapper {
+        place-self: center end;
+    }
+}

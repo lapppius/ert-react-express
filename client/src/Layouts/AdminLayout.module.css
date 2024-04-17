@@ -1,0 +1,9 @@
+.adminMain {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem;
+  padding: 1rem;
+  background: var(--player-header-back);
+  border-radius: 0.5rem;
+  max-height: 100%;
+}

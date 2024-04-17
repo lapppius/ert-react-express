@@ -1,0 +1,29 @@
+.card {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.card_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+form div{
+    margin: 0.5rem;
+}
+
+.login_button{
+    width: fit-content;
+}

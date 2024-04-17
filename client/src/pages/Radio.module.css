@@ -1,0 +1,39 @@
+.radioContent * {
+}
+
+.radioContent {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: auto auto 1fr;
+    width: 100%;
+}
+
+.radioContent aside,
+section:not(:first-child) {
+    padding: 15px;
+    height: fit-content;
+    /* border: 1px dotted; */
+    background-color: var(--player-header-back);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+}
+
+@media only screen and (min-width: 500px) {
+    .radioContent {
+        grid-template-columns: 3.5fr 1fr;
+        grid-template-areas:
+            'radio_header_area radio_header_area'
+            'radio_epg_area radio_side_area'
+            'radio_comments_area radio_side_area';
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .radioContent {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'radio_header_area '
+            'radio_epg_area '
+            'radio_side_area'
+            'radio_comments_area ';
+    }
+}

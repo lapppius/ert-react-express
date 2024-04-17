@@ -1,0 +1,49 @@
+.listImageContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 600px) {
+    .listImageContainer {
+        width: 75px;
+        height: 75px;
+    }
+    .radioLogoContainer {
+        height: 180px;
+        width: 180px;
+    }
+}
+@media only screen and (max-width: 599px) {
+    .listImageContainer {
+        width: 55px;
+        height: 55px;
+    }
+    .radioLogoContainer {
+        height: 140px;
+        width: 140px;
+    }
+}
+
+.listImageContainer img {
+    height: auto;
+    width: 100%;
+}
+
+.radioLogoContainer {
+    grid-area: radio_logo_area;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    border-radius: 50%;
+    background: rgb(245, 245, 245);
+    overflow: hidden;
+    border: 4px solid #38383865;
+    transition: all 0.2s ease-in-out;
+}
+
+.radioLogoContainer img {
+    flex: none;
+    height: auto;
+    width: 75%;
+}

@@ -1,0 +1,33 @@
+.adminNav {
+  background: var(--player-header-back);
+  /* display: grid; */
+  grid-area: admin-nav;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  /* min-height: 100vh; */
+  position: sticky;
+  top: 0;
+}
+
+.adminNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.adminNav li a {
+  display: flex;
+  align-items: center;
+  color: cyan;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+}
+
+.adminNav li a:hover {
+  background-color: var(--dark-cyan-back);
+}

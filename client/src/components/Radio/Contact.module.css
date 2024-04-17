@@ -1,0 +1,7 @@
+.phonesList {
+  align-items: flex-start !important;
+}
+
+address:not(.phonesList) li {
+  align-items: center;
+}

@@ -1,0 +1,10 @@
+.shareButton {
+    justify-self: flex-end;
+    background-color: transparent;
+    border: none;
+}
+
+.shareGroup{
+    display: flex;
+    
+}

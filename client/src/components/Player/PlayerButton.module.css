@@ -1,0 +1,12 @@
+#previousBtn {
+    justify-self: right;
+}
+
+#nextBtn {
+    justify-self: left;
+}
+
+#playPauseBtn >svg{
+    width: 3rem !important;
+    height: 3rem !important;
+}

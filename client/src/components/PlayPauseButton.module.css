@@ -1,0 +1,80 @@
+.button {
+    /* background-color: var(--dark-cyan-back); */
+    background: linear-gradient(
+        60deg,
+        rgba(0, 139, 139, 0.315) 20%,
+        rgba(0, 160, 160, 0.527) 80%
+    );
+    border: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    padding: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    filter: drop-shadow(0 0 0.7rem var(--body-back));
+    -webkit-filter: drop-shadow(0 0 0.7rem var(--body-back));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.button svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.radioPlayButton {
+    filter: drop-shadow(0 0 0 transparent);
+    backdrop-filter: blur(0px);
+    opacity: 100%;
+    background: linear-gradient(
+        60deg,
+        rgba(0, 139, 139, 0.515) 20%,
+        rgba(0, 160, 160, 0.727) 80%
+    );
+}
+
+.radioPlayButton svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* .radioPlayButton span {
+    padding: 0 1rem 0 0;
+}
+.radioPlayButton:hover {
+    transform: scale(1) !important;
+} */
+
+@media (hover: hover) and (pointer: fine) {
+    .button:hover {
+        transform: scale(1.1);
+        opacity: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .button:hover {
+        transform: scale(1);
+    }
+
+    .button svg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .radioPlayButton {
+        grid-column-start: 2;
+    }
+
+    .radioPlayButton svg {
+        width: 4rem;
+        height: 4rem;
+    }
+}
