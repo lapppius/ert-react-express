@@ -1,4 +1,5 @@
 {
   "version": 2,
-  "builds": [{ "src": "./client/build", "use": "@vercel/static-build" }]
+  "builds": [{ "src": "./client/build", "use": "@vercel/static-build" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }

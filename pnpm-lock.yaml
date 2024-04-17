@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  reactExpress:
+    specifier: 'link:'
+    version: 'link:'
+
 devDependencies:
   concurrently:
     specifier: ^8.2.2
