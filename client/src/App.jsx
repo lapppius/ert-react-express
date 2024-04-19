@@ -1,6 +1,6 @@
 import Radios from "./pages/Radios";
 import { Radio } from "./pages/Radio";
-import About from "./pages/About";
+
 import Epg from "./pages/Epg";
 import NotFound from "./pages/NotFound";
 import AdminRadios from "./pages/Admin/AdminRadios";
@@ -43,7 +43,6 @@ export default function App() {
                 <Route path="/radios" element={<Radios />} />
 
                 <Route path=":slug" element={<Radio />} />
-                <Route path="/about" element={<About />} />
                 <Route path="/epg" element={<Epg />} />
                 <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="*" element={<NotFound />} />

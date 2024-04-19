@@ -1,7 +1,7 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import styles from './TopNavBar.module.css';
-import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { NavLink, useNavigate } from "react-router-dom";
+import styles from "./TopNavBar.module.css";
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 import {
   Button,
   Box,
@@ -13,8 +13,8 @@ import {
   IconButton,
   Skeleton,
   Tooltip,
-} from '@mui/material';
-import Logout from '@mui/icons-material/Logout';
+} from "@mui/material";
+import Logout from "@mui/icons-material/Logout";
 
 export default function TopNavBar() {
   const authContext = useAuth();
@@ -33,51 +33,31 @@ export default function TopNavBar() {
     logout();
   };
   const profile = () => {
-    navigate('/Profile');
+    navigate("/Profile");
   };
 
   return (
     <>
-      <header className={'header'}>
+      <header className={"header"}>
         <nav>
           <ul>
             <li>
               <NavLink
                 to="/"
                 className={(navData) =>
-                  navData.isActive ? 'active' : undefined
+                  navData.isActive ? "active" : undefined
                 }
               >
                 Ραδιόφωνα
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={(navData) =>
-                  navData.isActive ? 'active' : undefined
-                }
-              >
-                Σχετικά
-              </NavLink>
-            </li>
-            {/* <li>
-              <NavLink
-                to="/epg"
-                className={(navData) =>
-                  navData.isActive ? styles.active : undefined
-                }
-              >
-                Πρόγραμμα
-              </NavLink>
-            </li> */}
           </ul>
           <ul className={styles.LoginSignUpButtons}>
             {authContext.currentUser === null ? (
               <>
                 <li>
                   <NavLink
-                    to={'/Login'}
+                    to={"/Login"}
                     className={(navData) =>
                       navData.isActive
                         ? `active ${styles.loginButton}`
@@ -90,9 +70,9 @@ export default function TopNavBar() {
 
                 <li>
                   <NavLink
-                    to={'/Signup'}
+                    to={"/Signup"}
                     className={(navData) =>
-                      navData.isActive ? 'active' : undefined
+                      navData.isActive ? "active" : undefined
                     }
                   >
                     Signup
@@ -102,9 +82,9 @@ export default function TopNavBar() {
             ) : authContext.currentUser === undefined ? (
               <li
                 style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  gap: '1rem',
+                  display: "flex",
+                  justifyContent: "space-between",
+                  gap: "1rem",
                 }}
               >
                 <Box>
@@ -125,9 +105,9 @@ export default function TopNavBar() {
                   <Box>
                     <Tooltip title={authContext.currentUser.email}>
                       <IconButton
-                        aria-controls={open ? 'basic-menu' : undefined}
+                        aria-controls={open ? "basic-menu" : undefined}
                         aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
+                        aria-expanded={open ? "true" : undefined}
                         onClick={handleClick}
                       >
                         <Avatar
@@ -142,7 +122,7 @@ export default function TopNavBar() {
                       open={open}
                       onClose={handleClose}
                       MenuListProps={{
-                        'aria-labelledby': 'basic-button',
+                        "aria-labelledby": "basic-button",
                       }}
                     >
                       <MenuItem onClick={(handleClose, profile)}>
@@ -162,7 +142,7 @@ export default function TopNavBar() {
                 )}
               </li>
             ) : (
-              'login'
+              "login"
             )}
           </ul>
         </nav>
