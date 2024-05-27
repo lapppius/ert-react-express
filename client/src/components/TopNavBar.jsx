@@ -52,7 +52,7 @@ export default function TopNavBar() {
               </NavLink>
             </li>
           </ul>
-          <ul className={styles.LoginSignUpButtons}>
+          {/* <ul className={styles.LoginSignUpButtons}>
             {authContext.currentUser === null ? (
               <>
                 <li>
@@ -144,7 +144,7 @@ export default function TopNavBar() {
             ) : (
               "login"
             )}
-          </ul>
+          </ul> */}
         </nav>
       </header>
     </>

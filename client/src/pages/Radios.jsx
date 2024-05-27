@@ -1,7 +1,9 @@
+import PageDescription from "../components/PageDescription";
+import PageTitle from "../components/PageTitle";
 import RadiosList from "../components/RadiosList";
 import { useEffect, useState, useMemo } from "react";
 
-export default function Radios() {
+export default function Radios({ title }) {
   const [isLoading, setIsLoading] = useState(true);
   const [loaded, setLoaded] = useState({});
 
@@ -17,5 +19,19 @@ export default function Radios() {
   }, []);
 
   const loadedRadios = useMemo(() => loaded, [loaded]);
-  return <>{isLoading ? undefined : <RadiosList radios={loadedRadios} />}</>;
+  return (
+    <>
+      {isLoading ? undefined : (
+        <>
+          <RadiosList radios={loadedRadios} />
+          <PageTitle title={title} />
+          <PageDescription
+            description={
+              "Όλοι οι ραδιοφωνικοί σταθμοί της ΕΡΤ σε μια εφαρμογή."
+            }
+          />
+        </>
+      )}
+    </>
+  );
 }

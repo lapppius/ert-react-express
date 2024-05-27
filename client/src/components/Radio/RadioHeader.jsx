@@ -8,6 +8,7 @@ import { fetchWikiSummary, setImagesListPromise } from "../../FetchFunctions";
 import { usePlayer } from "../../contexts/PlayerContext";
 import { Skeleton } from "@mui/material";
 import React from "react";
+import PageDescription from "../PageDescription";
 
 export default function RadioHeader(props) {
   const playerContext = usePlayer();
@@ -113,32 +114,35 @@ export default function RadioHeader(props) {
         </div>
         <div className={styles.radioDescription} ref={descriptionContainerRef}>
           {wikiSummary.wikiSum.sumContent ? (
-            <p className={styles.wikiSummary} ref={wikiSummaryRef}>
-              {wikiSummary.wikiSum.sumContent}
-              {wikiSummary.wikiSum.isWiki == null ? (
-                ""
-              ) : wikiSummary.wikiSum.isWiki == true ? (
-                <a
-                  className={styles.wikiLink}
-                  target="_blank"
-                  title={`Λήμμα της Βικιπαίδειας για ${props.title}`}
-                  href={`https://el.wikipedia.org/wiki/${encodeURI(
-                    props.title
-                  )}`}
-                >
-                  Βικιπαίδεια
-                </a>
-              ) : (
-                <a
-                  className={styles.wikiLink}
-                  target="_blank"
-                  title={`Λήμμα της Βικιπαίδειας για ${props.title}`}
-                  href={`https://wikidata.org/wiki/${encodeURI(props.id)}`}
-                >
-                  Wikidata
-                </a>
-              )}
-            </p>
+            <>
+              <PageDescription description={wikiSummary.wikiSum.sumContent} />
+              <p className={styles.wikiSummary} ref={wikiSummaryRef}>
+                {wikiSummary.wikiSum.sumContent}
+                {wikiSummary.wikiSum.isWiki == null ? (
+                  ""
+                ) : wikiSummary.wikiSum.isWiki == true ? (
+                  <a
+                    className={styles.wikiLink}
+                    target="_blank"
+                    title={`Λήμμα της Βικιπαίδειας για ${props.title}`}
+                    href={`https://el.wikipedia.org/wiki/${encodeURI(
+                      props.title
+                    )}`}
+                  >
+                    Βικιπαίδεια
+                  </a>
+                ) : (
+                  <a
+                    className={styles.wikiLink}
+                    target="_blank"
+                    title={`Λήμμα της Βικιπαίδειας για ${props.title}`}
+                    href={`https://wikidata.org/wiki/${encodeURI(props.id)}`}
+                  >
+                    Wikidata
+                  </a>
+                )}
+              </p>
+            </>
           ) : (
             <div>
               <Skeleton

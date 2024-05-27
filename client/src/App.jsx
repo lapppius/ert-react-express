@@ -39,7 +39,7 @@ export default function App() {
                   }
                 ></Route>
 
-                <Route path="/" element={<Radios />} />
+                <Route path="/" element={<Radios title="Home" />} />
                 <Route path="/radios" element={<Radios />} />
 
                 <Route path=":slug" element={<Radio />} />

@@ -6,6 +6,7 @@ import styles from "./Radio.module.css";
 import { useState } from "react";
 import { getWikidataItem } from "../FetchFunctions";
 import { parseWikidataItem } from "../lib/wiki/utils";
+import PageTitle from "../components/PageTitle";
 
 export const Radio = () => {
   const { slug } = useParams();
@@ -26,10 +27,6 @@ export const Radio = () => {
   }, [loadedRadio]);
 
   useEffect(() => {
-    console.log(loadedWikidataData);
-  }, [loadedWikidataData]);
-
-  useEffect(() => {
     fetch(`/api/radios/slug/${slug}`)
       .then((response) => {
         return response.json();
@@ -41,6 +38,7 @@ export const Radio = () => {
 
   return (
     <div className={styles.radioContent} ref={radioRef}>
+      <PageTitle title={loadedRadio.name} />
       <RadioHeader {...loadedRadio} {...loadedWikidataData} />
       <RadioSide {...loadedWikidataData} />
       {/* <RadioEpg /> */}
