@@ -6,9 +6,16 @@ export default function PageDescription({ description }) {
 
   useEffect(() => {
     if (!description) return;
-    document
-      .querySelector('meta[name="description"]')
-      .setAttribute("content", description);
+    if (document.querySelector('meta[name="description"]')) {
+      document
+        .querySelector('meta[name="description"]')
+        .setAttribute("content", description);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = description;
+      document.head.appendChild(meta); // Append it to the head element
+    }
   }, [location, description]);
 
   return null;
