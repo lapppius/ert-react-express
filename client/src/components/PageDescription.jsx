@@ -5,9 +5,10 @@ export default function PageDescription({ description }) {
   const location = useLocation();
 
   useEffect(() => {
+    if (!description) return;
     document
       .querySelector('meta[name="description"]')
-      .setAttribute("content", description ? description : "ERT Radios");
+      .setAttribute("content", description);
   }, [location, description]);
 
   return null;
