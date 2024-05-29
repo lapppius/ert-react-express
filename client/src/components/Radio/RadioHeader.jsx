@@ -4,20 +4,13 @@ import ShareButton from "../ShareButton";
 import RadioImg from "../RadioImg";
 import * as Vibrant from "node-vibrant";
 import { useEffect, useRef, useState, useContext } from "react";
-import { fetchWikiSummary, setImagesListPromise } from "../../FetchFunctions";
 import { usePlayer } from "../../contexts/PlayerContext";
 import { Skeleton } from "@mui/material";
-import React from "react";
-import PageDescription from "../PageDescription";
 
 export default function RadioHeader(props) {
   const playerContext = usePlayer();
   const { curId, curImg } = playerContext.playerState;
   const [imgPalette, setImgPalette] = useState(null);
-
-  const [wikiSummary, setWikiSummary] = useState({
-    wikiSum: { sumContent: null, isWiki: null },
-  });
 
   const wikiSummaryRef = useRef(null);
   const descriptionContainerRef = useRef(null);
@@ -30,17 +23,6 @@ export default function RadioHeader(props) {
       });
     }
   }, []);
-
-  useEffect(() => {
-    fetchWikiSummary(props.title).then((res) => {
-      setWikiSummary({
-        wikiSum: {
-          sumContent: res.extract ? res.extract : props.description,
-          isWiki: res.extract ? true : false,
-        },
-      });
-    });
-  }, [props]);
 
   useEffect(() => {
     if (props.logoURL) {
@@ -113,14 +95,13 @@ export default function RadioHeader(props) {
           <ShareButton {...props} />
         </div>
         <div className={styles.radioDescription} ref={descriptionContainerRef}>
-          {wikiSummary.wikiSum.sumContent ? (
+          {props.wikiSum.sumContent ? (
             <>
-              <PageDescription description={wikiSummary.wikiSum.sumContent} />
               <p className={styles.wikiSummary} ref={wikiSummaryRef}>
-                {wikiSummary.wikiSum.sumContent}
-                {wikiSummary.wikiSum.isWiki == null ? (
+                {props.wikiSum.sumContent}
+                {props.wikiSum.isWiki == null ? (
                   ""
-                ) : wikiSummary.wikiSum.isWiki == true ? (
+                ) : props.wikiSum.isWiki == true ? (
                   <a
                     className={styles.wikiLink}
                     target="_blank"
